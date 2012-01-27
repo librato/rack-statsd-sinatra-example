@@ -1,4 +1,6 @@
-This is an example Sinatra app to show off [rack-statsd](https://github.com/github/rack-statsd) usage. It outputs a simple string with random latency, which is measured and graphed automatically. The specifics are in `config.ru` where the statsd client is instantiated and passed to rack-statsd. Any rack application should work in a similar manner.
+[rack-statsd](https://github.com/github/rack-statsd) is rack middleware designed to automatically measure request latencies of rack applications; these latencies are graphed over time via statsd. Since it works on the request level, it requires no access or modification to your application to function; simply add the middleware in front of your app and rack-statsd takes care of the rest.
+
+This is an example Sinatra app written to show off its usage. To demonstrate how the middleware works, the application randomly delays itself while serving requests to simulate the real response times of a web application. You can swap in any other rack application without issue. The specifics are in `config.ru` where the statsd client is instantiated and passed to rack-statsd.
 
 To get up and running:
 
